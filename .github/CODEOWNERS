@@ -1,0 +1,15 @@
+# CODEOWNERS — governance control untuk memastikan perubahan penting direview
+# Format: <path pattern>  <@username atau @org/team>
+#
+# Di enterprise, file ini dipakai untuk memaksa review dari tim/individu tertentu
+# sebelum PR bisa di-merge (dipasangkan dengan branch protection rule
+# "Require review from Code Owners").
+
+# Contoh: semua perubahan di workflow CI/CD wajib direview
+/.github/workflows/  @dino-a-stephanus
+
+# Contoh: perubahan IaC wajib direview (biar nggak ada drift tanpa approval)
+/iac/  @dino-a-stephanus
+
+# Default: semua file lain
+*  @dino-a-stephanus
