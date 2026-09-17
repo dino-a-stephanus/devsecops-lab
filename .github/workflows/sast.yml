@@ -20,7 +20,7 @@ jobs:
       image: semgrep/semgrep
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Fix git dubious ownership (container permission issue)
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
