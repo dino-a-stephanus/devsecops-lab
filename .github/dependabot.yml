@@ -1,0 +1,25 @@
+version: 2
+updates:
+  # Aktifkan sesuai ecosystem yang dipakai di /app nanti (npm, pip, docker, dll)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Contoh untuk Node.js (uncomment kalau app/ pakai npm)
+  # - package-ecosystem: "npm"
+  #   directory: "/app"
+  #   schedule:
+  #     interval: "weekly"
+
+  # Contoh untuk Python (uncomment kalau app/ pakai pip)
+  # - package-ecosystem: "pip"
+  #   directory: "/app"
+  #   schedule:
+  #     interval: "weekly"
+
+  # Contoh untuk Docker (uncomment kalau ada Dockerfile)
+  # - package-ecosystem: "docker"
+  #   directory: "/app"
+  #   schedule:
+  #     interval: "weekly"
