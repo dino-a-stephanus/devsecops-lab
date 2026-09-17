@@ -7,6 +7,11 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
 jobs:
   semgrep:
     name: Semgrep SAST
@@ -16,6 +21,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Fix git dubious ownership (container permission issue)
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Run Semgrep
         run: semgrep scan --config=auto --sarif --output=semgrep-results.sarif
